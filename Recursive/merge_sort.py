@@ -42,7 +42,12 @@ def merge(left, right):
   pass
 
 merge_sort([8, 1, 9, 14, 23])
+
+SOMETHING to Look Over
+https://stackabuse.com/merge-sort-in-python/
 '''
+
+# MARK: DOESN'T WORK
 def merge_sort(items):
     # print("Calling")
     # if len(items) > 1:
@@ -54,7 +59,8 @@ def merge_sort(items):
 
     #     return merge(merge_sort(left), merge_sort(right))
     # return items
-    if len(items) == 1:
+
+    if len(items) <= 1:
         return items
     
     mid = len(items)//2
@@ -80,10 +86,13 @@ def merge(left, right):
     print(f"Merged: {merged}")
     print(f"left index {l_index} && right index {r_index}")
     # return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
-    merging = merged + left[:l_index] + right[r_index:]
+    merging = merged + left[l_index:] + right[r_index:]
     return merging
 
 
+print("--------Sorting--------")
 print(merge_sort([10,5,6,11,3,4,2]))
+print("--------Sorting--------")
+print(merge_sort([8, 1, 9, 14, 23]))
 
     
