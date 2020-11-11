@@ -23,12 +23,29 @@ def partition(items, low, high):
     TODO: Running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Choose a pivot any way and document your method in docstring above
+    print("Parting")
+    pivot = items[low]
+    start = low + 1
+    end = high
+
     # TODO: Loop through all items in range [low...high]
-    for item in items:
-        print(items)
-    # TODO: Move items less than pivot into front of range [low...p-1]
-    # TODO: Move items greater than pivot into back of range [p+1...high]
+    while True:
+        # TODO: Move items less than pivot into front of range [low...p-1]
+        while start <= end and items[end] >= pivot:
+            end = end - 1
+        # TODO: Move items greater than pivot into back of range [p+1...high]
+        while start <= end and items[start] <= pivot:
+            start = start + 1
+
+        if start <= end:
+            # print("Switch")
+            items[start], items[end] = items[end], items[start]
+        else:
+            # print("Break")
+            break
     # TODO: Move pivot item into final position [p] and return index p
+    items[low], items[end] = items[end], items[low]
+    return end
 
 
 def quick_sort(items, low=None, high=None):
@@ -41,18 +58,26 @@ def quick_sort(items, low=None, high=None):
     if low == None and high == None:
         low = 0
         high = len(items)-1
+
     # TODO: Check if list or range is so small it's already sorted (base case)
-    if len(items) == 1:
-        return items
+    # if len(items) == 1:
+    #     return items
+    # print(low)
+    # print(high)
+    if low >= high:
+        return
+
+
     # TODO: Partition items in-place around a pivot and get index of pivot
     part = partition(items, low, high)
     # TODO: Sort each sublist range by recursively calling quick sort
-    quick_sort(items,low,part)
-    quick_sort(items,part,high)
+    quick_sort(items,low,part-1)
+    quick_sort(items,part+1,high)
 
     return items
     
 
 
-
-print(quick_sort([1,89,10,5,66,2]))
+array = [1,89,10,5,66,2]
+print(f"Array is {array}")
+print(f"Sorted: {quick_sort(array)}")

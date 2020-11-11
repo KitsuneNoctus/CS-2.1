@@ -71,9 +71,9 @@ def merge_sort(items):
     return merge(merge_sort(left), merge_sort(right))
 
 def merge(left, right):
-    print("---Merge---")
-    print(f"Left: {left}")
-    print(f"Right: {right}")
+    # print("---Merge---")
+    # print(f"Left: {left}")
+    # print(f"Right: {right}")
     merged = []
     l_index = r_index = 0
     while l_index < len(left) and r_index < len(right):
@@ -83,8 +83,8 @@ def merge(left, right):
         else:
             merged.append(right[r_index])
             r_index += 1
-    print(f"Merged: {merged}")
-    print(f"left index {l_index} && right index {r_index}")
+    # print(f"Merged: {merged}")
+    # print(f"left index {l_index} && right index {r_index}")
     # return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
     merging = merged + left[l_index:] + right[r_index:]
     return merging
