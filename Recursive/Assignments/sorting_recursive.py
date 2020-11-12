@@ -24,7 +24,7 @@ def merge(left, right):
 def merge_sort(items):
     """Sort given items by splitting list into two approximately equal halves,
     sorting each recursively, and merging results into a list in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
+    TODO: Running time: O(n log(n)) It goes through the whole list only once, but piece by piece. 
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check if list is so small it's already sorted (base case)
     # TODO: Split items list into approximately equal halves
@@ -76,8 +76,9 @@ def partition(items, low, high):
 def quick_sort(items, low=None, high=None):
     """Sort given items in place by partitioning items in range `[low...high]`
     around a pivot item and recursively sorting each remaining sublist range.
-    TODO: Best case running time: ??? Why and under what conditions?
-    TODO: Worst case running time: ??? Why and under what conditions?
+    TODO: Best case running time: O(n log(n)) under the circumstances that it's length is a less than 2 I would assume
+    TODO: Worst case running time: O(n^2) it has to go through the whole list once, then each sub part of the 
+    list broken down
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check if high and low range bounds have default values (not given)
     if low == None and high == None:
