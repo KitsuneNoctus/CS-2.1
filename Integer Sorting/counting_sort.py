@@ -19,22 +19,29 @@ fundtion counting sort takes in list
 '''
 
 def counting_sort(list):
-    # Get max value
+    # FIXME: Improve this to mutate input instead of creating new output list
+
+    # TODO: Find range of given numbers (minimum and maximum integer values)
     max_val = max(list) + 1
     # Create new list of 0's
     # https://www.codegrepper.com/code-examples/python/create+a+list+of+a+certain+length+python
+
+    # TODO: Create list of counts with a slot for each number in input range
     count_list = [0] * max_val
 
+    # TODO: Loop over given numbers and increment each number's count
     # Loop through list and add count values
     for item in list:
         count_list[item] += 1
 
-    for _ in count_list:
-
-        pass
+    number_of_items = 0
+    for index, count in enumerate(count_list):
+        count_list[index] = number_of_items
+        number_of_items += count
 
     output_list = [None] * len(list)
 
+    # TODO: Loop over counts and append that many numbers into output list
     for item in list:
 
         output_list[count_list[item]] = item
