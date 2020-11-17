@@ -64,12 +64,12 @@ def bucket_sort(numbers, num_buckets=10):
 
     new_list = []
     # TODO: Find range of given numbers (minimum and maximum values)
-    min = numbers[0]
+    # min = numbers[0]
     max = numbers[0]
 
     for item in numbers:
-        if min > item:
-            min = 1
+        # if min > item:
+        #     min = 1
         if max < item:
             max = item
 
