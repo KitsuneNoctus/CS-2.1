@@ -4,7 +4,8 @@
 def counting_sort(numbers):
     """Sort given numbers (integers) by counting occurrences of each number,
     then looping over counts and copying that many numbers into output list.
-    TODO: Running time: ??? Why and under what conditions?
+    TODO: Running time: O(n+k) as it is a build of multiple loops that traverse in single direction.
+    There are no nested loops. Its just the loops to get through the lists, plus some extra to build.
     TODO: Memory usage: ??? Why and under what conditions?"""
     # FIXME: Improve this to mutate input instead of creating new output list
 
@@ -55,6 +56,7 @@ def bubble_sort(items):
 def bucket_sort(numbers, num_buckets=10):
     """Sort given numbers by distributing into buckets representing subranges,
     then sorting each bucket and concatenating all buckets in sorted order.
+    TODO: Running time(Best): ??? Why and under what conditions?
     TODO: Running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # FIXME: Improve this to mutate input instead of creating new output list
