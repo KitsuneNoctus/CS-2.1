@@ -56,8 +56,10 @@ def bubble_sort(items):
 def bucket_sort(numbers, num_buckets=10):
     """Sort given numbers by distributing into buckets representing subranges,
     then sorting each bucket and concatenating all buckets in sorted order.
-    TODO: Running time(Best): ??? Why and under what conditions?
-    TODO: Running time: ??? Why and under what conditions?
+    TODO: Running time(Best): O(n+k) When the objects are evenly spread throughout the buckets and 
+    each bucket sort has roughly the same average run time.
+    TODO: Running time(Worst): O(n^2) is many elements are bunched together and put in one bucket, meaning
+    its comes down to the method sorting the buckets which is also brining in more.
     TODO: Memory usage: ??? Why and under what conditions?"""
     # FIXME: Improve this to mutate input instead of creating new output list
 
